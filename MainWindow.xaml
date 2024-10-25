@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_PuntoDeVentas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Inicio" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border CornerRadius="10" Background="GhostWhite">
+        <Grid Name="Principal" Background="Transparent">
+        <!-- #REGION HEADER-->
+            <Grid Name="Header" Height="35" VerticalAlignment="Top" Background="Transparent">
+                <Border CornerRadius="10,10,0,0" Background="#c48b9f">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition> </ColumnDefinition>
+                            <ColumnDefinition Width="220"> </ColumnDefinition>
+                            <ColumnDefinition Width="100"> </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!-- #REGION TITLE-->
+                        <TextBlock Text="Annie's Store" Grid.Column="0" Foreground="Black" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                        
+                        <!-- #ENDREGION-->
+                        <!-- #REGION CUENTA-->
+                        <Button x:Name="BtnCuenta" Grid.Column="1" Background="Transparent" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"> </ColumnDefinition>
+                                    <ColumnDefinition> </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1" Text="Mi Cuenta" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+                                <Image Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/SCS/IMG/setting.png"></Image>
+                            </Grid>
+                        </Button>
+                        <!-- #ENDREGION-->
+                    </Grid>
+                </Border>
+            </Grid>
+        <!-- #ENDREGION-->
+        </Grid>
+    </Border>
 </Window>
