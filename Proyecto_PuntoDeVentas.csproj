@@ -94,7 +94,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="SCS\IMG\close.png" />
+    <Resource Include="SCS\IMG\home.png" />
+    <Resource Include="SCS\IMG\info.png" />
+    <Resource Include="SCS\IMG\menu.png" />
+    <Resource Include="SCS\IMG\minimize.png" />
+    <Resource Include="SCS\IMG\pos.png" />
+    <Resource Include="SCS\IMG\products.png" />
+    <Resource Include="SCS\IMG\profile.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="SCS\IMG\setting.png" />
   </ItemGroup>

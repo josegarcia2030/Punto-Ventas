@@ -24,5 +24,15 @@ namespace Proyecto_PuntoDeVentas
         {
             InitializeComponent();
         }
+
+        private void TBShow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBHide(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
