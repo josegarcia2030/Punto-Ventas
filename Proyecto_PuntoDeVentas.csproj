@@ -107,5 +107,8 @@
   <ItemGroup>
     <Resource Include="SCS\IMG\setting.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SCS\IMG\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
