@@ -130,7 +130,7 @@
     </Window.Resources>
     <Border CornerRadius="10" Background="GhostWhite">
         <Grid Name="Principal" Background="Transparent">
-        <!-- #REGION HEADER-->
+            <!-- #REGION HEADER-->
             <Grid Name="Header" Height="35" VerticalAlignment="Top" Background="Transparent">
                 <Border CornerRadius="10,10,0,0" Background="#c48b9f"></Border>
                 <Grid>
@@ -158,8 +158,8 @@
                     <Button Style="{DynamicResource BtnHeaderStyle}" x:Name="BtnInfo" Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right" Cursor="Hand">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="15"> </ColumnDefinition>
-                                <ColumnDefinition> </ColumnDefinition>
+                                <ColumnDefinition Width="15"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image Source="/SCS/IMG/info.png" Grid.Column="0" VerticalAlignment="Center"></Image>
                             <TextBlock Text="Acerca de" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
@@ -168,7 +168,7 @@
                     <!--#ENDREGION-->
                     <!--#REGION MINIMIZAR-->
                     <Button Style="{DynamicResource BtnHeaderStyle}" x:Name="BtnMinimizar" Grid.Column="2" Background="Transparent" BorderBrush="Transparent" Height="25" Width="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,30,0">
-                        <Image Source="/SCS/IMG/minimize.png" Cursor="Hand"></Image>                        
+                        <Image Source="/SCS/IMG/minimize.png" Cursor="Hand"></Image>
                     </Button>
                     <!--#ENDREGION-->
                     <!--#REGION CERRAR-->
@@ -178,62 +178,60 @@
                     <!--#ENDREGION-->
                 </Grid>
             </Grid>
-        <!-- #ENDREGION-->
-        <!--#REGION SIDEBAR-->
+            <!-- #ENDREGION-->
+            <!--#REGION CONTENT-->
+            <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftBottonDownBG">
+                <Border CornerRadius="0,0,0,10" Background="#ffedff"></Border>
+                <TextBlock Text="InfoToolsSV" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"></TextBlock>
+            </Grid>
+            <!--#ENDREGION-->
+            <!--#REGION SIDEBAR-->
             <Grid x:Name="GridMenu" Background="Transparent" Width="200" HorizontalAlignment="Left" Margin="0,35,0,0">
-                <Border Background="#f7bacf" CornerRadius="0,0,0,10"></Border>
+                <Border Background="#f7bacf" CornerRadius="0,0,0,10"/>
                 <!--#REGION MENU-->
-                    <StackPanel Background="Transparent" VerticalAlignment="Top">
-                        <!--#REGION SHOW/HIDE-->
-                        <Grid Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0">
-                            <ToggleButton Style="{DynamicResource BtnShowHide}" x:Name="BtnShowHide" Width="30" Height="30" BorderBrush="Transparent" IsChecked="False" Checked="TBShow" Unchecked="TBHide" VerticalAlignment="Top" Cursor="Hand">
-                                <ToggleButton.Background>
-                                    <ImageBrush ImageSource="/SCS/IMG/menu.png"></ImageBrush>
-                                </ToggleButton.Background>
-                                <ToggleButton.Triggers>
+                <StackPanel Background="Transparent" VerticalAlignment="Top">
+                    <!--#REGION SHOW/HIDE-->
+                    <Grid Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0">
+                        <ToggleButton Style="{DynamicResource BtnShowHide}" x:Name="BtnShowHide" Width="30" Height="30" BorderBrush="Transparent" IsChecked="False" Checked="TBShow" Unchecked="TBHide" VerticalAlignment="Top" Cursor="Hand">
+                            <ToggleButton.Background>
+                                <ImageBrush ImageSource="/SCS/IMG/menu.png"/>
+                            </ToggleButton.Background>
+                            <ToggleButton.Triggers>
                                 <!--#REGION HIDE-->
-                                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                                        <BeginStoryboard>
-                                            <Storyboard x:Name="HidePanel">
-                                                <DoubleAnimation Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="75" Duration="0:0:0:0.5"></DoubleAnimation>    
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HidePanel">
+                                            <DoubleAnimation Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="75" Duration="0:0:0:0.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
                                 <!--#ENDREGION-->
                                 <!--#REGION SHOW-->
                                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                                     <BeginStoryboard>
                                         <Storyboard x:Name="ShowPanel">
-                                            <DoubleAnimation Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="75" To="200" Duration="0:0:0:0.5"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="75" To="200" Duration="0:0:0:0.5"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
                                 <!--#ENDREGION-->
                             </ToggleButton.Triggers>
-                            </ToggleButton>        
-                        </Grid>
-                        <!--#ENDREGION-->
-                        <!--#REGION LISTA-->
-                        <ListView Background="Transparent" BorderBrush="Transparent" Margin="0,30,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <!--#REGION INICIO-->
-                            <ListViewItem Height="70">
+                        </ToggleButton>
+                    </Grid>
+                    <!--#ENDREGION-->
+                    <!--#REGION LISTA-->
+                    <ListView Background="Transparent" BorderBrush="Transparent" Margin="0,30,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <!--#REGION INICIO-->
+                        <ListViewItem Height="70">
                             <Button x:Name="BtnInicio" Height="70" Width="200">
-                                <Grid>
-
-                                </Grid>
+                                <Grid/>
                             </Button>
                         </ListViewItem>
                         <!--#ENDREGION-->
-                        </ListView>
-                        <!--#ENDREGION-->
-                    </StackPanel>
+                    </ListView>
+                    <!--#ENDREGION-->
+                </StackPanel>
                 <!--#ENDREGION-->
-            </Grid>
-        <!--#ENDREGION-->
-            <!--#REGION CONTENT-->
-            <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftBottonDownBG">
-                <Border CornerRadius="0,0,0,10" Background="#ffedff"></Border>
-                <TextBlock Text="InfoToolsSV" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"></TextBlock>
             </Grid>
             <!--#ENDREGION-->
         </Grid>
