@@ -217,6 +217,12 @@
                 <!--#ENDREGION-->
             </Grid>
         <!--#ENDREGION-->
+            <!--#REGION CONTENT-->
+            <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925">
+                <Border CornerRadius="0,0,0,10" Background="#ffedff"></Border>
+                <TextBlock Text="InfoToolsSV" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"></TextBlock>
+            </Grid>
+            <!--#ENDREGION-->
         </Grid>
     </Border>
 </Window>

@@ -27,12 +27,17 @@ namespace Proyecto_PuntoDeVentas
 
         private void TBShow(object sender, RoutedEventArgs e)
         {
-
+            GridContent.Opacity = 0.5;
         }
 
         private void TBHide(object sender, RoutedEventArgs e)
         {
+            GridContent.Opacity = 1;
+        }
 
+        private void PreviewMouseLeftBottonDownBG(object sender, MouseButtonEventArgs e)
+        {
+            BtnShowHide.IsChecked = false;
         }
     }
 }
