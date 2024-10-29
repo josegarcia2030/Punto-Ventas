@@ -180,7 +180,7 @@
             </Grid>
         <!-- #ENDREGION-->
         <!--#REGION SIDEBAR-->
-            <Grid x:Name="GridMenu" Background="Transparent" Width="75" HorizontalAlignment="Left" Margin="0,35,0,0">
+            <Grid x:Name="GridMenu" Background="Transparent" Width="200" HorizontalAlignment="Left" Margin="0,35,0,0">
                 <Border Background="#f7bacf" CornerRadius="0,0,0,10"></Border>
                 <!--#REGION MENU-->
                     <StackPanel Background="Transparent" VerticalAlignment="Top">
@@ -213,12 +213,25 @@
                             </ToggleButton>        
                         </Grid>
                         <!--#ENDREGION-->
+                        <!--#REGION LISTA-->
+                        <ListView Background="Transparent" BorderBrush="Transparent" Margin="0,30,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <!--#REGION INICIO-->
+                            <ListViewItem Height="70">
+                            <Button x:Name="BtnInicio" Height="70" Width="200">
+                                <Grid>
+
+                                </Grid>
+                            </Button>
+                        </ListViewItem>
+                        <!--#ENDREGION-->
+                        </ListView>
+                        <!--#ENDREGION-->
                     </StackPanel>
                 <!--#ENDREGION-->
             </Grid>
         <!--#ENDREGION-->
             <!--#REGION CONTENT-->
-            <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925">
+            <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftBottonDownBG">
                 <Border CornerRadius="0,0,0,10" Background="#ffedff"></Border>
                 <TextBlock Text="InfoToolsSV" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"></TextBlock>
             </Grid>
