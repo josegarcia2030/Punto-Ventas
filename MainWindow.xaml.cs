@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Proyecto_PuntoDeVentas.Views;
 
 namespace Proyecto_PuntoDeVentas
 {
@@ -48,6 +49,11 @@ namespace Proyecto_PuntoDeVentas
         private void Cerrar(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Usuarios_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Usuarios();
         }
     }
 }

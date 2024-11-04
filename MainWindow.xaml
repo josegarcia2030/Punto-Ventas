@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_PuntoDeVentas"
+        xmlns:viewmodels = "clr-namespace:Proyecto_PuntoDeVentas.Views"
         mc:Ignorable="d"
         Title="Inicio" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -44,7 +45,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border CornerRadius="5" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -234,6 +235,12 @@
             </Setter>
         </Style>
         <!--#ENDREGION-->
+        <!--#REGION DATATEMPLATE USUARIOS-->
+        <DataTemplate x:Name="Usuarios"
+                      DataType="{x:Type viewmodels:Usuarios}">
+            <viewmodels:Usuarios DataContext="{Binding}"></viewmodels:Usuarios>
+        </DataTemplate>
+        <!--#ENDREGION-->
     </Window.Resources>
     <!--#REGION PROYECTO-->
     <Border CornerRadius="10" Background="GhostWhite">
@@ -291,6 +298,7 @@
             <Grid x:Name="GridContent" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="565" Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftBottonDownBG">
                 <Border CornerRadius="0,0,0,10" Background="#ffedff"></Border>
                 <TextBlock Text="InfoToolsSV" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"></TextBlock>
+                <ContentControl Content="{Binding}"></ContentControl>
             </Grid>
             <!--#ENDREGION-->
             <!--#REGION SIDEBAR-->
@@ -373,7 +381,7 @@
                         <!--#ENDREGION-->
                         <!--#REGION USUARIOS-->
                         <ListViewItem Style="{DynamicResource ListViewStyle}" Height="70">
-                            <Button Style="{DynamicResource BtnListaStyle}" x:Name="BtnUsuarios" Height="70" Width="200" HorizontalAlignment="Left" Cursor="Hand" Background="Transparent" BorderBrush="Transparent">
+                            <Button Style="{DynamicResource BtnListaStyle}" x:Name="BtnUsuarios" Height="70" Width="200" HorizontalAlignment="Left" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Click="Usuarios_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"></ColumnDefinition>
